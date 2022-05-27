@@ -23,6 +23,57 @@ Also, after we get a non empty result we cache in the local and also in the memo
 
 In this example I created a method `linkWith` which links a chain with the next one, you could also get this via constructor.
 
+### Usage
+```
+dart run bin/chain_of_responsibility.dart
+```
+
+Output example
+
+```
+============================================
+[COR] - STARTING THE CHAIN
+[MEMORY] - I DO NOT HAVE DATA, REQUESTING DOWN THE CHAIN
+[LOCAL] - I DO NOT HAVE DATA, REQUESTING DOWN THE CHAIN
+[REMOTE] - FETCHING DATA
+[LOCAL] - SAVING
+[MEMORY] - SAVING
+[COR RESULT] => [User1, User2, User3]
+[COR] - END OF THE CHAIN
+============================================
+
+
+============================================
+[COR] - STARTING THE CHAIN
+[MEMORY] - I DO HAVE DATA, HERE IT IS
+[COR RESULT] => [User1, User2, User3]
+[COR] - END OF THE CHAIN
+============================================
+
+
+============================================
+[MEMORY] - CLEARING DATA, SIMULATION
+============================================
+
+
+============================================
+[COR] - STARTING THE CHAIN
+[MEMORY] - I DO NOT HAVE DATA, REQUESTING DOWN THE CHAIN
+[LOCAL] - I DO HAVE DATA, HERE IT IS
+[MEMORY] - SAVING
+[COR RESULT] => [User1, User2, User3]
+[COR] - END OF THE CHAIN
+============================================
+
+
+============================================
+[COR] - STARTING THE CHAIN
+[MEMORY] - I DO HAVE DATA, HERE IT IS
+[COR RESULT] => [User1, User2, User3]
+[COR] - END OF THE CHAIN
+============================================
+```
+
 ## Author
 
 Acácio Veit Schneider
